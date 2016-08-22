@@ -51,18 +51,14 @@ public class Ejercicio3 extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 204));
         jLabel2.setText("Saldo inicial");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
-
-        txtSaldoInicial.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtSaldoInicialKeyTyped(evt);
-            }
-        });
         jPanel1.add(txtSaldoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 180, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 0, 255));
         jLabel3.setText("Saldo Final");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+
+        txtSaldoFinal.setEditable(false);
         jPanel1.add(txtSaldoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 180, -1));
 
         cmdCalcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -78,11 +74,6 @@ public class Ejercicio3 extends javax.swing.JFrame {
         cmdBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cmdBorrar.setForeground(new java.awt.Color(0, 204, 51));
         cmdBorrar.setText("BORRAR");
-        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdBorrarActionPerformed(evt);
-            }
-        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -117,22 +108,6 @@ public class Ejercicio3 extends javax.swing.JFrame {
     SaldoFinal= String.valueOf(op);
     txtSaldoFinal.setText(SaldoFinal);
     }//GEN-LAST:event_cmdCalcularActionPerformed
-
-    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
-    txtSaldoInicial.setText("");
-    txtSaldoFinal.setText("");
-    
-    txtSaldoInicial.requestFocusInWindow();
-    }//GEN-LAST:event_cmdBorrarActionPerformed
-
-    private void txtSaldoInicialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSaldoInicialKeyTyped
-    char c=evt.getKeyChar();
-    
-    if(!Character.isDigit(c)){
-    getToolkit().beep();
-    evt.consume();
-    }
-    }//GEN-LAST:event_txtSaldoInicialKeyTyped
 
     /**
      * @param args the command line arguments
